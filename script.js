@@ -64,4 +64,33 @@ if(el.id===id){
 }
 return el;
     });
+    localStorage.setItem("vehicles", JSON.stringify(data));
+    display(data);
 }
+
+function deleteVehicle(id){
+    data=data.filter((el)=>el.id!==id);
+    localStorage.setItem("vehicles", JSON.stringify(data));
+    display(data);
+}
+
+function applyFilters(){
+    let type=document.getElementById("filterCategory").value;
+    let avail=document.getElementById("filterAvail").value;
+    let filtered=data.filter((v)=>{
+        return(
+            (type===""|| v.type===type) &&
+            (avail==="" || v.availabilty===avail)
+        
+        );
+    });
+    display(filtered);
+}
+ 
+function clearFilters(){
+    document.getElementById("filterCategory").value="";
+    document.getElementById("filterAvail").value="";
+    display(data);
+
+}
+display(data);
