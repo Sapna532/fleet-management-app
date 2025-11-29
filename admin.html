@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="navbar">
+        <select id="filterCategory" onchange="applyFilters()">
+            <option value="Car">Car</option>
+            <option value="Auto">Auto</option>
+            <option value="Truck">Truck</option>
+            <option value="Bus">Bus</option>
+        </select>
+        <select id="filterAvail" onchange="applyFilters()">
+            <option value="">All Availability</option>
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option></select>
+            <button onclick="clearFilters()"> Clear Filters</button>
+    </div>
+
+    <div id="sidebar">
+        <h2>Add new Vehicle</h2>
+        <input type="text" id="model">
+        <select id="type">
+            <option value="">Select the type you want</option>
+            <option value="Car">Car</option>
+            <option value="Auto">Auto</option>
+            <option value="Truck">Truck</option>
+            <option value="Bus">Bus</option>
+        </select>
+
+        <select id="duty">
+            <option value="">Duty Status</option>
+             <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+        <input type="text" id="driver">
+        <p id="error" style="color: red;"></p>
+        <button onclick="addVehicle()">Add Vehicle</button>
+    </div>
+    <div id="cards"></div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
